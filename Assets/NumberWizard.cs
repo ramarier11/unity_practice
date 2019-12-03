@@ -10,11 +10,16 @@ public class NumberWizard : MonoBehaviour
   // Start is called before the first frame update
   void Start()
   {
+    StartGame();
+  }
+
+  void StartGame()
+  {
     Debug.Log("Welcome to number wizard.");
     Debug.Log("Pick a number");
     Debug.Log("The highest number you can pick is: " + max);
     Debug.Log("And the lowest number you can pick is: " + min);
-    Debug.Log("Tell me if your number is higher or lower than 500.");
+    Debug.Log("Tell me if your number is higher or lower than: " + 500);
     Debug.Log("Push Up Arrow for higher, Push Down Arrow for lower, Push Enter for Correct");
     max = max + 1;
   }
@@ -37,7 +42,8 @@ public class NumberWizard : MonoBehaviour
     }
     else if (Input.GetKeyDown(KeyCode.Return))
     {
-      Debug.Log("Enter was pressed.");
+      Debug.Log("I knew it!");
+      StartGame();
     }
 
 
